@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomNavigation"
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    android:background="@color/white"
+    android:elevation="10dp"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingBottom="4dp">
+
+    <!-- INICIO -->
+    <LinearLayout
+        android:id="@+id/navInicio"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⌂"
+            android:textColor="@color/primary_green"
+            android:textSize="26sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inicio"
+            android:textColor="@color/primary_green"
+            android:textSize="11sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <!-- ALIMENTOS -->
+    <LinearLayout
+        android:id="@+id/navAlimentos"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🥗"
+            android:textSize="21sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alimentos"
+            android:textColor="@color/text_gray"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
+
+    <!-- REGISTRO -->
+    <LinearLayout
+        android:id="@+id/navRegistro"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✓"
+            android:textColor="@color/text_gray"
+            android:textSize="23sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro"
+            android:textColor="@color/text_gray"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
+
+    <!-- PROGRESO -->
+    <LinearLayout
+        android:id="@+id/navProgreso"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="▥"
+            android:textColor="@color/text_gray"
+            android:textSize="23sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Progreso"
+            android:textColor="@color/text_gray"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
+
+    <!-- PERFIL -->
+    <LinearLayout
+        android:id="@+id/navPerfil"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="♙"
+            android:textColor="@color/text_gray"
+            android:textSize="23sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perfil"
+            android:textColor="@color/text_gray"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

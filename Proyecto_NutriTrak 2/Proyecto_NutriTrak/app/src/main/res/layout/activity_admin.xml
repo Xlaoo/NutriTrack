@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NutriTrack"
+            android:textAlignment="center"
+            android:textColor="#009739"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp" />
+
+        <!-- Subtítulo -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Panel de Administrador"
+            android:textAlignment="center"
+            android:textColor="#555555"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="30dp" />
+
+        <!-- Bienvenida -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bienvenido, Administrador 👋"
+            android:textColor="#222222"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Usuarios -->
+        <Button
+            android:id="@+id/btnUsuarios"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="👥  GESTIONAR USUARIOS"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#009739"
+            android:layout_marginBottom="15dp" />
+
+        <!-- Alimentos -->
+        <Button
+            android:id="@+id/btnAlimentos"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🥗  GESTIONAR ALIMENTOS"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#009739"
+            android:layout_marginBottom="15dp" />
+
+        <!-- Reportes -->
+        <Button
+            android:id="@+id/btnReportes"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="📊  VER REPORTES"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#007A30"
+            android:layout_marginBottom="15dp" />
+
+        <!-- Separador -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Cerrar sesión -->
+        <Button
+            android:id="@+id/btnCerrarSesion"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🚪  CERRAR SESIÓN"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#D32F2F" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Permiso para conectarse a Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_nutritrack_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_nutritrack_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NutriTrack"
+        android:usesCleartextTraffic="true">
+
+        <!-- PANEL ADMINISTRADOR -->
+        <activity
+            android:name=".admin.AdminActivity"
+            android:exported="false" />
+
+        <!-- GESTIÓN DE USUARIOS -->
+        <activity
+            android:name=".admin.UsuariosAdminActivity"
+            android:exported="false" />
+
+        <!-- GESTIÓN DE ALIMENTOS -->
+        <activity
+            android:name=".admin.AlimentosAdminActivity"
+            android:exported="false" />
+
+        <!-- REPORTES -->
+        <activity
+            android:name=".admin.ReportesAdminActivity"
+            android:exported="false" />
+
+        <!-- REGISTRO -->
+        <activity
+            android:name=".RegistroActivity"
+            android:exported="false" />
+
+        <!-- PANTALLA PRINCIPAL -->
+        <activity
+            android:name=".usuario.MainActivity"
+            android:exported="false" />
+
+        <!-- LOGIN -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
+        <!-- SPLASH -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.MAIN" />
+
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".usuario.PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".usuario.AlimentosActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".usuario.RegistroConsumoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".usuario.ProgresoActivity"
+            android:exported="false" />
+
+
+
+
+    </application>
+
+</manifest>

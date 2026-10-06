@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary_green">#16A085</color>
+    <color name="primary_dark">#087F6C</color>
+    <color name="secondary_green">#45B89C</color>
+
+    <color name="background">#F2FBF7</color>
+    <color name="background_light">#EAF8F2</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#17332E</color>
+    <color name="text_dark">#17332E</color>
+    <color name="text_gray">#71847F</color>
+
+    <color name="border">#D9E9E4</color>
+
+    <color name="protein">#E8F6F1</color>
+    <color name="carbs">#EAF5F2</color>
+    <color name="fat">#EEF7F4</color>
+
+    <color name="water_blue">#48BDE8</color>
+
+</resources>
