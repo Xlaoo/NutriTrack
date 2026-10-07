@@ -40,7 +40,7 @@ public class  LoginActivity extends AppCompatActivity {
 
     // URL de la API PHP
     private static final String URL_LOGIN =
-            "http://10.0.2.2:8001/login.php";
+            "http://10.0.2.2/nutritrack_api/login.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,11 +97,12 @@ public class  LoginActivity extends AppCompatActivity {
 
         txtForgot.setOnClickListener(v -> {
 
-            Toast.makeText(
-                    this,
-                    "Recuperación de contraseña disponible próximamente",
-                    Toast.LENGTH_SHORT
-            ).show();
+            Intent intent = new Intent(
+                    LoginActivity.this,
+                    RecuperarPasswordActivity.class
+            );
+
+            startActivity(intent);
 
         });
 
@@ -208,6 +209,9 @@ public class  LoginActivity extends AppCompatActivity {
                             String correo =
                                     usuario.getString("correo");
 
+                            String rol =
+                                    usuario.optString("rol", "usuario");
+
                             Toast.makeText(
                                     LoginActivity.this,
                                     message,
@@ -216,11 +220,10 @@ public class  LoginActivity extends AppCompatActivity {
 
 
                             // =================================================
-                            // COMPROBAR SI ES ADMINISTRADOR
+                            // COMPROBAR SI ES ADMINISTRADOR POR ROL EN BD
                             // =================================================
 
-                            if (correo.equalsIgnoreCase("admin@gmail.com")
-                                    && password.equals("123456")) {
+                            if ("administrador".equalsIgnoreCase(rol)) {
 
                                 // =============================================
                                 // ENTRAR AL PANEL DE ADMINISTRADOR

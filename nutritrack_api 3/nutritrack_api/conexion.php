@@ -13,20 +13,43 @@
 
 $servidor = "localhost";
 $usuario = "root";
-$password = getenv("DB_PASSWORD");
+$password = $_SERVER["DB_PASSWORD"] ?? getenv("DB_PASSWORD") ?: "";
 $base_datos = "nutritrack";
 
-$conn = new mysqli(
-    $servidor,
-    $usuario,
-    $password,
-    $base_datos
-);
-
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+$conn = null;
+try {
+    $conn = new mysqli($servidor, $usuario, $password, $base_datos);
+} catch (mysqli_sql_exception $e) {
+    if ($password !== "") {
+        try {
+            $conn = new mysqli($servidor, $usuario, "", $base_datos);
+        } catch (mysqli_sql_exception $e2) {
+            http_response_code(500);
+            echo json_encode(
+                [
+                    "success" => false,
+                    "message" => "Error de conexión con la base de datos"
+                ],
+                JSON_UNESCAPED_UNICODE
+            );
+            exit;
+        }
+    } else {
+        http_response_code(500);
+        echo json_encode(
+            [
+                "success" => false,
+                "message" => "Error de conexión con la base de datos"
+            ],
+            JSON_UNESCAPED_UNICODE
+        );
+        exit;
+    }
 }
 
 $conn->set_charset("utf8mb4");
+
+// Alias para compatibilidad con archivos que usan $conexion
+$conexion = $conn;
 
 ?>

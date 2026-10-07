@@ -21,7 +21,7 @@ try {
     // CANTIDAD DE USUARIOS
     // ==========================================
 
-    $sqlUsuarios = "SELECT COUNT(*) AS total FROM usuarios";
+    $sqlUsuarios = "SELECT COUNT(*) AS total FROM usuarios WHERE rol = 'usuario'";
 
     $resultadoUsuarios = $conn->query($sqlUsuarios);
 
@@ -41,6 +41,7 @@ try {
     $sqlUltimoUsuario = "
         SELECT id, nombre, apellido, correo
         FROM usuarios
+        WHERE rol = 'usuario'
         ORDER BY id DESC
         LIMIT 1
     ";

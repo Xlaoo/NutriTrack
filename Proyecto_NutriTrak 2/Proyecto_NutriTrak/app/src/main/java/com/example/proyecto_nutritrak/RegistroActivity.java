@@ -39,7 +39,7 @@ public class RegistroActivity extends AppCompatActivity {
     private TextView txtLogin;
 
     private static final String URL_REGISTRO =
-            "http://10.0.2.2:8001/registro.php";
+            "http://10.0.2.2/nutritrack_api/registro.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -44,10 +44,10 @@ public class ProgresoActivity extends AppCompatActivity {
     private LinearLayout navPerfil;
 
     private final String URL_PROGRESO =
-            "http://10.0.2.2:8001/progreso.php";
+            "http://10.0.2.2/nutritrack_api/progreso.php";
 
     private final String URL_MEDICION =
-            "http://10.0.2.2:8001/registrar_medicion.php";
+            "http://10.0.2.2/nutritrack_api/registrar_medicion.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -28,7 +28,7 @@ public class AlimentosAdminActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
 
     private static final String URL_ALIMENTOS =
-            "http://10.0.2.2:8001/admin_alimentos.php";
+            "http://10.0.2.2/nutritrack_api/admin_alimentos.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

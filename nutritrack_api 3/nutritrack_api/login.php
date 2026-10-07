@@ -47,7 +47,7 @@ if (empty($correo) || empty($password)) {
 }
 
 // Buscar usuario por correo
-$sql = "SELECT id, nombre, apellido, correo, password
+$sql = "SELECT id, nombre, apellido, correo, password, rol
         FROM usuarios
         WHERE correo = ?";
 
@@ -115,7 +115,8 @@ echo json_encode(
             "id" => (int) $usuario["id"],
             "nombre" => $usuario["nombre"],
             "apellido" => $usuario["apellido"],
-            "correo" => $usuario["correo"]
+            "correo" => $usuario["correo"],
+            "rol" => $usuario["rol"] ?? "usuario"
         ]
     ]
 );

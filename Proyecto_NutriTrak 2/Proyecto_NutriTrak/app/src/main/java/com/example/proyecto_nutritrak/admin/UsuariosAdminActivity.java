@@ -28,7 +28,7 @@ public class UsuariosAdminActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
 
     private static final String URL_USUARIOS =
-            "http://10.0.2.2:8001/admin_usuarios.php";
+            "http://10.0.2.2/nutritrack_api/admin_usuarios.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

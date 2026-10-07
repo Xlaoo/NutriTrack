@@ -16,15 +16,27 @@ header("Content-Type: application/json; charset=UTF-8");
 $host = "localhost";
 $db   = "nutritrack";
 $user = "root";
-$pass = "susaya123";
+$pass = $_SERVER["DB_PASSWORD"] ?? getenv("DB_PASSWORD") ?: "";
 
 try {
 
-    $conexion = new PDO(
-        "mysql:host=$host;dbname=$db;charset=utf8mb4",
-        $user,
-        $pass
-    );
+    try {
+        $conexion = new PDO(
+            "mysql:host=$host;dbname=$db;charset=utf8mb4",
+            $user,
+            $pass
+        );
+    } catch (PDOException $e) {
+        if ($pass !== "") {
+            $conexion = new PDO(
+                "mysql:host=$host;dbname=$db;charset=utf8mb4",
+                $user,
+                ""
+            );
+        } else {
+            throw $e;
+        }
+    }
 
     $conexion->setAttribute(
         PDO::ATTR_ERRMODE,

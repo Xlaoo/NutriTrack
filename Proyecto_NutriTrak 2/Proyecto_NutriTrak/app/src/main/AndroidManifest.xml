@@ -49,6 +49,11 @@
             android:name=".LoginActivity"
             android:exported="false" />
 
+        <!-- RECUPERAR CONTRASEÑA -->
+        <activity
+            android:name=".RecuperarPasswordActivity"
+            android:exported="false" />
+
         <!-- SPLASH -->
         <activity
             android:name=".SplashActivity"

@@ -13,24 +13,7 @@
 
 header("Content-Type: application/json; charset=UTF-8");
 
-$conexion = new mysqli(
-    "localhost",
-    "root",
-    "susaya123",
-    "nutritrack"
-);
-
-if ($conexion->connect_error) {
-
-    echo json_encode(
-        [
-            "success" => false,
-            "message" => "Error de conexión con la base de datos"
-        ]
-    );
-
-    exit;
-}
+require_once "conexion.php";
 
 
 $idUsuario = $_POST["idUsuario"] ?? "";

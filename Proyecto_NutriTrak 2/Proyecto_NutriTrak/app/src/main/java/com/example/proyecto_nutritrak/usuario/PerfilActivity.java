@@ -49,10 +49,10 @@ public class PerfilActivity extends AppCompatActivity {
     private int idUsuario;
 
     private static final String URL_PERFIL =
-            "http://10.0.2.2:8001/perfil.php";
+            "http://10.0.2.2/nutritrack_api/perfil.php";
 
     private static final String URL_ACTUALIZAR =
-            "http://10.0.2.2:8001/actualizar_perfil.php";
+            "http://10.0.2.2/nutritrack_api/actualizar_perfil.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

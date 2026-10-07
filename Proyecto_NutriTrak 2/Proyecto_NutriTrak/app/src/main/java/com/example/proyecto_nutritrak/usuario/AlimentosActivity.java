@@ -35,7 +35,7 @@ public class AlimentosActivity extends AppCompatActivity {
     private LinearLayout navPerfil;
 
     private final String URL_ALIMENTOS =
-            "http://10.0.2.2:8001/listar_alimentos.php";
+            "http://10.0.2.2/nutritrack_api/listar_alimentos.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

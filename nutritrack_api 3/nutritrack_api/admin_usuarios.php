@@ -31,6 +31,7 @@ try {
             rol,
             fecha_registro
         FROM usuarios
+        WHERE rol = 'usuario'
         ORDER BY id DESC
     ";
 

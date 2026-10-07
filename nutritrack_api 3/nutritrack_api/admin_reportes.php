@@ -23,7 +23,7 @@ try {
     // ==========================================
 
     $sqlUsuarios
-        = "SELECT COUNT(*) AS total FROM usuarios";
+        = "SELECT COUNT(*) AS total FROM usuarios WHERE rol = 'usuario'";
 
     $resultadoUsuarios
         = $conn->query($sqlUsuarios);

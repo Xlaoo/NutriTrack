@@ -24,7 +24,7 @@ public class ReportesAdminActivity extends AppCompatActivity {
     private Button btnVolver;
 
     private static final String URL_REPORTES =
-            "http://10.0.2.2:8001/admin_reportes.php";
+            "http://10.0.2.2/nutritrack_api/admin_reportes.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

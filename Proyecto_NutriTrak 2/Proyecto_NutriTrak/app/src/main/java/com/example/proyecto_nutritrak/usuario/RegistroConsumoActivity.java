@@ -56,10 +56,10 @@ public class RegistroConsumoActivity extends AppCompatActivity {
     private int alimentoSeleccionadoId = -1;
 
     private final String URL_ALIMENTOS =
-            "http://10.0.2.2:8001/listar_alimentos.php";
+            "http://10.0.2.2/nutritrack_api/listar_alimentos.php";
 
     private final String URL_REGISTRAR =
-            "http://10.0.2.2:8001/registrar_consumo.php";
+            "http://10.0.2.2/nutritrack_api/registrar_consumo.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
