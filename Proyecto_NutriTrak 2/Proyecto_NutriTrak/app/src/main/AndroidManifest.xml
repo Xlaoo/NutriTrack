@@ -85,8 +85,9 @@
             android:name=".usuario.ProgresoActivity"
             android:exported="false" />
 
-
-
+        <activity
+            android:name=".usuario.HistorialActivity"
+            android:exported="false" />
 
     </application>
 

@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout navRegistro;
     private LinearLayout navProgreso;
     private LinearLayout navPerfil;
+    private LinearLayout btnHistorialAlimentacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
 
         navPerfil =
                 findViewById(R.id.navPerfil);
+
+        btnHistorialAlimentacion =
+                findViewById(R.id.btnHistorialAlimentacion);
     }
 
 
@@ -142,6 +146,18 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+
+        if (btnHistorialAlimentacion != null) {
+            btnHistorialAlimentacion.setOnClickListener(v -> {
+                Intent intent =
+                        new Intent(
+                                MainActivity.this,
+                                HistorialActivity.class
+                        );
+                enviarDatosUsuario(intent);
+                startActivity(intent);
+            });
+        }
 
         navAlimentos.setOnClickListener(v -> {
 
