@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `nutritrack` /*!40100 DEFAULT CHARACTER SET utf8m
 USE `nutritrack`;
 -- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: nutritrack
+-- Host: localhost    Database: nutritrack
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.4.32-MariaDB
 
@@ -37,7 +37,7 @@ CREATE TABLE `alimentos` (
   `sodio` decimal(6,2) DEFAULT 0.00,
   `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,6 +46,7 @@ CREATE TABLE `alimentos` (
 
 LOCK TABLES `alimentos` WRITE;
 /*!40000 ALTER TABLE `alimentos` DISABLE KEYS */;
+INSERT INTO `alimentos` VALUES (1,'Manzana',52.00,0.30,14.00,0.20,'Frutas','Manzana fresca rica en fibra y agua',10.40,1.00,'2026-10-10 18:49:48'),(2,'Plátano',89.00,1.10,22.80,0.30,'Frutas','Plátano maduro fuente natural de potasio',12.20,1.00,'2026-10-10 18:49:48'),(3,'Arroz blanco cocido',130.00,2.70,28.20,0.30,'Cereales','Arroz blanco cocido básico en la dieta',0.10,1.00,'2026-10-10 18:49:48'),(4,'Pechuga de pollo',165.00,31.00,0.00,3.60,'Carnes','Pechuga de pollo magra cocida a la plancha',0.00,74.00,'2026-10-10 18:49:48'),(5,'Huevo',155.00,13.00,1.10,11.00,'Proteínas','Huevo entero de gallina cocido',1.10,124.00,'2026-10-10 18:49:48'),(6,'Leche entera',61.00,3.20,4.80,3.30,'Lácteos','Leche entera pasteurizada líquida',5.10,43.00,'2026-10-10 18:49:48'),(7,'Avena',389.00,16.90,66.30,6.90,'Cereales','Avena en hojuelas integral rica en fibra',0.00,2.00,'2026-10-10 18:49:48'),(8,'Papa sancochada',87.00,1.90,20.10,0.10,'Tubérculos','Papa cocida o hervida sin piel',0.90,6.00,'2026-10-10 18:49:48'),(9,'Pan integral',247.00,13.00,41.30,3.40,'Panadería','Pan elaborado con harina de trigo integral',4.30,400.00,'2026-10-10 18:49:48'),(10,'Yogur natural',61.00,3.50,4.70,3.30,'Lácteos','Yogur natural sin azúcar añadida',4.70,46.00,'2026-10-10 18:49:48'),(11,'Pescado',105.00,22.00,0.00,1.20,'Pescados','Filete de pescado blanco cocido',0.00,68.00,'2026-10-10 18:49:48'),(12,'Zanahoria',41.00,0.90,9.60,0.20,'Verduras','Zanahoria fresca fuente de betacarotenos',4.70,69.00,'2026-10-10 18:49:48'),(13,'Brócoli',34.00,2.80,6.60,0.40,'Verduras','Brócoli fresco rico en antioxidantes y vitamina C',1.70,33.00,'2026-10-10 18:49:48'),(14,'Naranja',47.00,0.90,11.80,0.10,'Frutas','Naranja fresca rica en vitamina C',9.40,0.00,'2026-10-10 18:49:48'),(15,'Lentejas cocidas',116.00,9.00,20.10,0.40,'Legumbres','Lentejas cocidas ricas en hierro y proteína vegetal',1.80,2.00,'2026-10-10 18:49:48');
 /*!40000 ALTER TABLE `alimentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,8 +124,15 @@ CREATE TABLE `consumos` (
   `momento` varchar(50) DEFAULT '',
   `fecha_consumo` varchar(50) NOT NULL,
   `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nombre_alimento` varchar(150) DEFAULT NULL,
+  `calorias` decimal(8,2) DEFAULT 0.00,
+  `proteinas` decimal(8,2) DEFAULT 0.00,
+  `carbohidratos` decimal(8,2) DEFAULT 0.00,
+  `grasas` decimal(8,2) DEFAULT 0.00,
+  PRIMARY KEY (`id`),
+  KEY `fk_consumos_usuario` (`usuario_id`),
+  CONSTRAINT `fk_consumos_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,6 +141,7 @@ CREATE TABLE `consumos` (
 
 LOCK TABLES `consumos` WRITE;
 /*!40000 ALTER TABLE `consumos` DISABLE KEYS */;
+INSERT INTO `consumos` VALUES (1,1,1,150.00,'gramos','Desayuno','2026-10-10','2026-10-10 18:54:19','Manzana',78.00,0.45,21.00,0.30),(2,1,2,200.00,'gramos','Desayuno','2026-10-10','2026-10-10 18:58:53','Plátano',178.00,2.20,45.60,0.60);
 /*!40000 ALTER TABLE `consumos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -195,7 +204,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Juan','Perez','juan.perez@example.com','$2y$10$br5CBogeY.clcaol4mdIPOSKtJ9ze.OfWjIzz3PujfBpYvS3LlA8a',26,'Masculino',71.00,1.75,'2026-10-07 01:18:57','usuario','Moderado','Mantener peso'),(2,'Administrador','NutriTrack','admin@gmail.com','$2y$10$N7xuWYF6gdeTF.XJtWrKGe7alc8YLOw7CdN6Gciezv7jrcTY9OK9q',NULL,NULL,NULL,NULL,'2026-10-07 01:50:01','administrador',NULL,NULL);
+INSERT INTO `usuarios` VALUES (1,'Juan','Perez','juan.perez@example.com','$2y$10$FrVY43BNTKLHCjE2.QF5iuxDpLwOyYctDCkkskVYa6YjWpS3l5PWS',26,'Masculino',71.00,1.75,'2026-10-07 01:18:57','usuario','Moderado','Mantener peso'),(2,'Administrador','NutriTrack','admin@gmail.com','$2y$10$N7xuWYF6gdeTF.XJtWrKGe7alc8YLOw7CdN6Gciezv7jrcTY9OK9q',NULL,NULL,NULL,NULL,'2026-10-07 01:50:01','administrador',NULL,NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -208,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-06 22:17:04
+-- Dump completed on 2026-10-10 14:11:21
